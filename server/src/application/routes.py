@@ -7,6 +7,11 @@ import json
 @route('/pdb')
 def pdb_code_from_input():
     input = request.query.input
+
+    if not input:
+        abort(400)
+        return
+
     converted = converter.convert(input)
     pdbs = pdb_client.search_with_sequence(converted, 30)
 
