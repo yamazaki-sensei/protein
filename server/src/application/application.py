@@ -1,7 +1,9 @@
-from bottle import route, run, request
-from src.client import pdb_client
-from src.converter import converter
+from bottle import run
+from src.application import routes
 
-@route('/pdb/')
-def pdb_code_from_input():
-   input = request.query.input
+
+def main():
+    run(host='0.0.0.0', port='8081', debug=True)
+
+if __name__ == '__main__':
+    main()

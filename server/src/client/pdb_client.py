@@ -3,6 +3,7 @@ from urllib.parse import quote
 
 __url = 'http://www.rcsb.org/pdb/rest/search'
 
+
 def search_with_sequence(sequence, identity=70):
     print('Try to fetch with sequence: {}'.format(sequence))
     query = '<orgPdbQuery> \
@@ -18,5 +19,7 @@ def search_with_sequence(sequence, identity=70):
     }
 
     res = requests.post(__url, data=encoded, headers=headers)
-    print('res = {}'.format(res.text))
-    return res
+
+    list = res.text.split('\n')
+    print('res = \n{}'.format(list))
+    return list
