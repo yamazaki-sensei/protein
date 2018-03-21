@@ -19,3 +19,4 @@ def search_with_sequence(sequence, identity=70):
 
     res = requests.post(__url, data=encoded, headers=headers)
     print('res = {}'.format(res.text))
+    return res
