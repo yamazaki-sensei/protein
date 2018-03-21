@@ -10,5 +10,5 @@ ADD ./temp/server /home/server
 RUN pip install -r /home/server/requirements.txt
 
 EXPOSE 8081
-ENTRYPOINT [:/usr/local/bin/python", "home/server/src/application/application.py]
+ENTRYPOINT ["/usr/local/bin/python", "/home/server/src/application/application.py"]
 USER bottle
